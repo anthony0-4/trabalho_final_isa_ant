@@ -12,20 +12,20 @@
     <a class="navbar-brand" href="{{url('venda')}}"><i class="fa-solid fa-book-open-reader"></i> Venda</a><br>
     <a class="navbar-brand" href="{{ url('') }}"><i class="fa-solid fa-house"></i> Inicio</a><br>
   </div>
-<h3>Listagem de Livraria</h3>
 
-<form action="{{ route('livraria.search') }}" method="post">
+<h3>Listagem de Comentarios</h3>
+
+<form action="{{ route('comentarios.search') }}" method="post">
 
     <div class="row">
         @csrf
         <div class="col-4">
-            <label for="">Nome</label><br>
-            <input type="text" name="nome" class="form-control"><br>
+            <label for="">Usuarios</label><br>
+            <input type="text" name="usuario" class="form-control"><br>
         </div>
         <div class="col-4" style="margin-top: 22px;">
-            <button type="submit" class="btn btn-outline-danger"> <i class="fa-solid fa-binoculars"></i> Buscar</button>
-            <a href="{{ url('livraria/create') }}" class="btn btn-outline-warning"><i class="fa-solid fa-file"></i> Novo</a>
-            <a href="{{ url('livraria/report') }}" class="btn btn-outline-success"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+            <button type="submit" class="btn btn-outline-danger"><i class="fa-solid fa-binoculars"></i> Buscar</button>
+            <a href="{{ url('comentarios/create') }}" class="btn btn-outline-warning"><i class="fa-solid fa-file"></i> Novo</a>
         </div>
     </div>
 </form>
@@ -36,11 +36,9 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Nome</th>
-            <th>Endereço</th>
-            <th>CNPJ</th>
-            <th>Cidade</th>
-            <th>Estado</th>
+            <th>Usuario</th>
+            <th>Email</th>
+            <th>Comentario</th>
             <th>Ação</th>
             <th>Ação</th>
         </tr>
@@ -49,15 +47,13 @@
         @foreach ($dados as $item)
             <tr>
                 <td>{{ $item->id }}</td>
-                <td>{{ $item->nome }}</td>
-                <td>{{ $item->endereco }}</td>
-                <td>{{ $item->cnpj }}</td>
-                <td>{{ $item->cidade }}</td>
-                <td>{{ $item->estados->estados ?? '' }}</td>
-                <td><a href="{{ route('livraria.edit', $item->id) }} "class="btn btn-outline-primary" title="Editar"><i
+                <td>{{ $item->usuario }}</td>
+                <td>{{ $item->email }}</td>
+                <td>{{ $item->comentario }}</td>
+                <td><a href="{{ route('comentarios.edit', $item->id) }} "class="btn btn-outline-primary" title="Editar"><i
                             class="fa-solid fa-pen-nib"></i></a></td>
                 <td>
-                    <form action="{{ route('livraria.destroy', $item) }}" method="post">
+                    <form action="{{ route('comentarios.destroy', $item) }}" method="post">
                         @method('DELETE')
                         @csrf
                         <button type="submit" class="btn btn-outline-danger" title="Deletar"

@@ -5,9 +5,11 @@
     <div class="" style="text-align: left; width:100px">
         <img src="{{asset('img/SUN BOOKS.png')}}" class="img-fluid rounded-start" width="200px">
     </div>
+    <a class="navbar-brand" href="{{url('comentarios')}}"><i class="fa-solid fa-book"></i> Comentarios</a><br>
     <a class="navbar-brand" href="{{url('categoria')}}"><i class="fa-solid fa-bookmark"></i> Categorias</a><br>
     <a class="navbar-brand" href="{{url('livraria')}}"><i class="fa-solid fa-location-dot"></i> Livrarias</a><br>
     <a class="navbar-brand" href="{{url('livros')}}"><i class="fa-solid fa-book-open-reader"></i> Livros</a><br>
+    <a class="navbar-brand" href="{{url('venda')}}"><i class="fa-solid fa-book-open-reader"></i> Venda</a><br>
     <a class="navbar-brand" href="{{ url('') }}"><i class="fa-solid fa-house"></i> Inicio</a><br>
   </div>
 
