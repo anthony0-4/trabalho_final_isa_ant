@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("titulo",100);
             $table->string("vendedor",100);
             $table->string("valor",100);
+            $table->timestamps();
         });
     }
 

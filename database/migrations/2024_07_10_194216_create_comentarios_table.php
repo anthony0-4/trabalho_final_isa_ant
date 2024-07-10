@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("usuario",100);
             $table->string("email",100);
             $table->string("comentario",100);
+            $table->timestamps();
         });
     }
 

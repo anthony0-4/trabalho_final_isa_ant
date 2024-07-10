@@ -31,8 +31,8 @@
         value="@if (!empty($dado->email)) {{ $dado->email }}@elseif (!empty(old('email'))){{ old('email') }}@else{{ '' }} @endif"><br>
 
     <label for="">Comentario</label><br>
-    <input type="text" name="comentarios" class="form-control"
-        value="@if (!empty($dado->comentarios)) {{ $dado->comentarios }}@elseif (!empty(old('comentarios'))){{ old('comentarios') }}@else{{ '' }} @endif"><br>
+    <input type="text" name="comentario" class="form-control"
+        value="@if (!empty($dado->comentario)) {{ $dado->comentario }}@elseif (!empty(old('comentario'))){{ old('comentario') }}@else{{ '' }} @endif"><br>
 
     <button type="submit" class="btn btn-outline-success">Salvar</button>
     <a href="{{ url('comentarios') }}" class="btn btn-outline-warning">Voltar</a>
